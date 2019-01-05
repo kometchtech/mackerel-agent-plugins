@@ -15,7 +15,6 @@ before_script:
   - sed -i -e 's/386/arm/g' Makefile
   - sed -i -e 's/amd64/arm64/g' Makefile
   - sed -i -e 's/amd64/arm64/g' packaging/deb-v2/debian/control
-  -
 
 stages:
     - build
