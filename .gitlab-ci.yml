@@ -21,7 +21,7 @@ stages:
 compile:
     stage: build
     script:
-      - make lint testconvention deps deb
+      - make lint deps deb
     artifacts:
       paths:
         - binaries/
