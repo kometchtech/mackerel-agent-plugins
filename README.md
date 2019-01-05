@@ -1,3 +1,9 @@
+はじめに
+=====================
+
+このレポジトリは、公式がARM64/Aarch64に対応したパッケージを作成していないため、Aarch64向けにbuildするように対応改変したものです。
+
+
 mackerel-agent-plugins  [![Build Status](https://travis-ci.org/mackerelio/mackerel-agent-plugins.svg?branch=master)](https://travis-ci.org/mackerelio/mackerel-agent-plugins)
 ======================
 
@@ -71,34 +77,6 @@ Documentation for each plugin is located in its respective sub directory.
 * [mackerel-plugin-windows-server-sessions](./mackerel-plugin-windows-server-sessions/README.md)
 * [mackerel-plugin-xentop](./mackerel-plugin-xentop/README.md)
 
-Installation
-============
-
-## Install mackerel-agent
-
-ENG https://mackerel.io/docs/entry/howto/install-agent
-JPN https://mackerel.io/ja/docs/entry/howto/install-agent
-
-If the mackerel-agent has already be installed this step can be ignored.
-
-## Install mackerel-agent-plugins
-
-Install the plugin pack from either the yum or the apt repository.
-To setup these package repositories, see the documentation regarding the installation of mackerel-agent ([rpm](https://mackerel.io/docs/entry/howto/install-agent/rpm) / [deb](https://mackerel.io/docs/entry/howto/install-agent/deb)).
-
-mackerel-agent-plugins will be installed to ```/usr/bin/mackerel-plugin-*``` (and some plugins are symlinked as ```/usr/local/bin/mackerel-plugin-*```, for backward compatibility.).
-
-### yum
-
-```shell
-yum install mackerel-agent-plugins
-```
-
-### apt
-
-```shell
-apt-get install mackerel-agent-plugins
-```
 
 Caution
 =======
@@ -107,13 +85,6 @@ Some plugins may not work on CentOS/RedHat 5 because the golang compiler (gc) do
 (https://golang.org/doc/install)
 
 Some plugins are not contained in rpm and deb packages. If you want to use them, build them.
-
-Contribution
-============
-
-* fork it
-* develop the plugin you want
-* create a pullrequest!
 
 License
 =======
