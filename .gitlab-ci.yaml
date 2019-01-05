@@ -1,0 +1,29 @@
+# This file is a template, and might need editing before it works on your project.
+image: golang:latest
+
+variables:
+  # Please edit to your GitLab project
+  REPO_NAME: gitlab.com/kometchtech/mackerel-agent-plugins
+
+before_script:
+  - apt-get update
+  - apt-get install -y devscripts debhelper
+  - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
+  - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
+  - cd $GOPATH/src/$REPO_NAME
+  - sed -i -e 's/TARGET_OSARCH=\"linux\/386\"/TARGET_OSARCH\=\"linux\/arm64\"/g' Makefile
+  - sed -i -e 's/386/arm/g' Makefile
+  - sed -i -e 's/amd64/arm64/g' Makefile
+  - sed -i -e 's/amd64/arm64/g' packaging/deb-v2/debian/control
+  -
+
+stages:
+    - build
+
+compile:
+    stage: build
+    script:
+      - make lint cover testconvention deb
+    artifacts:
+      paths:
+        - binaries/
