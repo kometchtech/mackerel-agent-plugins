@@ -19,3 +19,6 @@ compile:
     stage: build
     script:
       - make all
+    dependencies: []
+    artifacts:
+    untracked: true
