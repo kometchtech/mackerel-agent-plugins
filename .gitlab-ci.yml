@@ -17,7 +17,7 @@ compile:
       - cd $GOPATH/src/$REPO_NAME
       - make testdeps build
       - GOOS=linux GOARCH=arm64
-      - cp build/mackerel-plugin packaging/deb-v2/debian/
+        #- cp build/mackerel-plugin packaging/deb-v2/debian/
       - cd packaging/deb-v2 && debuild --no-tgz-check -uc -us
 
     artifacts:
