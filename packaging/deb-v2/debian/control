@@ -1,5 +1,5 @@
 Source: mackerel-agent-plugins
-Maintainer: Mackerel Developers <mackerel-developers@hatena.ne.jp>
+Maintainer: kometchtech <kometch@gmail.com>
 Section: misc
 Priority: optional
 Build-Depends: debhelper
@@ -7,6 +7,6 @@ Standards-Version: 3.9.3
 
 Package: mackerel-agent-plugins
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Architecture: amd64
+Architecture: arm64
 Description: metric plugins for mackerel-agent
  metric plugins for https://mackerel.io (Monitoring SaaS)

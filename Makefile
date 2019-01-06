@@ -2,8 +2,8 @@ VERSION = 0.53.0
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
-GOOS   ?= $(shell go env GOOS)
-GOARCH ?= $(shell go env GOARCH)
+GOOS   ?= linux
+GOARCH ?= arm64
 BINDIR  = build/$(GOOS)/$(GOARCH)
 
 all: lint cover testconvention rpm deb
@@ -63,17 +63,17 @@ cover: testdeps
 rpm: rpm-v1 rpm-v2
 
 rpm-v1:
-	$(MAKE) build GOOS=linux GOARCH=386
-	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/386" \
+	$(MAKE) build GOOS=linux GOARCH=arm
+	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm" \
 	  --define "_version ${VERSION}" --define "buildarch noarch" \
 	  -bb packaging/rpm/mackerel-agent-plugins.spec
-	$(MAKE) build GOOS=linux GOARCH=amd64
-	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/amd64" \
+	$(MAKE) build GOOS=linux GOARCH=arm64
+	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm64" \
 	  --define "_version ${VERSION}" --define "buildarch x86_64" \
 	  -bb packaging/rpm/mackerel-agent-plugins.spec
 
 rpm-v2:
-	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=amd64
+	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
 	rpmbuild --define "_sourcedir `pwd`"  --define "_version ${VERSION}" \
 	  --define "buildarch x86_64" --define "dist .el7.centos" \
 	  -bb packaging/rpm/mackerel-agent-plugins-v2.spec
@@ -84,14 +84,14 @@ rpm-v2:
 deb: deb-v1 deb-v2
 
 deb-v1:
-	$(MAKE) build GOOS=linux GOARCH=386
+	$(MAKE) build GOOS=linux GOARCH=arm
 	for i in `cat packaging/deb/debian/source/include-binaries`; do \
-	  cp build/linux/386/`basename $$i` packaging/deb/debian/; \
+	  cp build/linux/arm/`basename $$i` packaging/deb/debian/; \
 	done
 	cd packaging/deb && debuild --no-tgz-check -rfakeroot -uc -us
 
 deb-v2:
-	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=amd64
+	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
 	cp build/mackerel-plugin packaging/deb-v2/debian/
 	cd packaging/deb-v2 && debuild --no-tgz-check -rfakeroot -uc -us
 
