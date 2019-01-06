@@ -7,7 +7,8 @@ variables:
 
 before_script:
   - apt-get update
-  - apt-get install -y -qq devscripts debhelper rpm
+  - DEBIAN_FRONTEND=noninteractive sudo apt-get install -y rpm devscripts debhelper
+  - mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
   - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
   - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
   - cd $GOPATH/src/$REPO_NAME
@@ -17,8 +18,13 @@ stages:
 
 compile:
     stage: build
+    before_script:
+      - go get github.com/motemen/gobump/cmd/gobump
+      - go get github.com/mackerelio/golib/cmd/mackerel-github-release
     script:
       - make all
+    after_scipt:
+      - goveralls -coverprofile=.profile.cov
     dependencies: []
     artifacts:
     untracked: true
