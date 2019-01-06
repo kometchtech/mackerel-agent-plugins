@@ -7,7 +7,7 @@ variables:
 
 before_script:
   - apt-get update
-  - apt-get install -y devscripts debhelper
+  - apt-get install -y -qq devscripts debhelper rpm
   - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
   - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
   - cd $GOPATH/src/$REPO_NAME
@@ -18,4 +18,4 @@ stages:
 compile:
     stage: build
     script:
-      - make build deps deb-v2
+      - make all
