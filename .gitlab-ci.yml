@@ -12,13 +12,14 @@ compile:
     script:
       - apt-get update
       - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq rpm devscripts debhelper
+      - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
+      - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
       - cd $GOPATH/src/$REPO_NAME
       - make testdeps build
       - GOOS=linux GOARCH=arm64
       - cp build/mackerel-plugin packaging/deb-v2/debian/
       - cd packaging/deb-v2 && debuild --no-tgz-check -uc -us
 
-    dependencies: []
     artifacts:
       untracked: true
       paths:
