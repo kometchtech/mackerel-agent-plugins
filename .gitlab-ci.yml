@@ -21,7 +21,7 @@ compile:
       - go get github.com/motemen/gobump/cmd/gobump
       - go get github.com/mackerelio/golib/cmd/mackerel-github-release
     script:
-      - make lint testdeps testconvention rpm deb
+      - make testdeps testconvention deb
     dependencies: []
     artifacts:
       untracked: true
