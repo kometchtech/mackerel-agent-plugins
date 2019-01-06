@@ -22,8 +22,6 @@ compile:
       - go get github.com/mackerelio/golib/cmd/mackerel-github-release
     script:
       - make all
-    after_script:
-      - goveralls -coverprofile=.profile.cov
     dependencies: []
     artifacts:
       untracked: true
