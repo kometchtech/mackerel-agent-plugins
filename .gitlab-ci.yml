@@ -6,7 +6,7 @@ variables:
 
 before_script:
   - apt-get update
-  - DEBIAN_FRONTEND=noninteractive sudo apt-get install -y rpm devscripts debhelper
+  - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq rpm devscripts debhelper
   - mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
   - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
   - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
