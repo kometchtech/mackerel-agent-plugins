@@ -6,18 +6,34 @@ variables:
 
 stages:
     - build
+    - deploy
 
 compile:
     stage: build
     script:
       - apt-get update
-      - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq rpm devscripts debhelper
-      - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
-      - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
-      - cd $GOPATH/src/$REPO_NAME
-      - make build build/mackerel-plugin testconvention deps deb
+      - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot \
+        binutils-aarch64-linux-gnu binutils-arm-linux-gnu
+      - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
+      - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
+      #- cd ${GOPATH}/src/${REPO_NAME}
+      - cd ${CI_PROJECT_DIR}
+      - make lint testconvention deps build deb
 
     artifacts:
-      untracked: true
       paths:
-        - package/*.deb
+        - packaging/*.deb
+      name: ${CI_PROJECT_NAME}
+      when: on_success
+
+      #deploy:
+      #    stage: deploy
+      #    script:
+      #      - github.com/tcnksm/ghr
+      #
+      #    deploy:
+      #      - provider: script
+      #        skip_cleanup: true
+      #        file: "packaging/*.deb"
+      #        on:
+      #          branch: master

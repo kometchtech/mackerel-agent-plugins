@@ -4,7 +4,8 @@
 このレポジトリは、公式がARM64/Aarch64に対応したパッケージを作成していないため、Aarch64向けにbuildするように対応改変したものです。
 
 
-mackerel-agent-plugins  [![Build Status](https://travis-ci.org/mackerelio/mackerel-agent-plugins.svg?branch=master)](https://travis-ci.org/mackerelio/mackerel-agent-plugins)
+mackerel-agent-plugins  [![pipeline status](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/pipeline.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master) [![coverage report](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/coverage.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master)
+
 ======================
 
 This is the official plugin pack for [mackerel-agent](https://github.com/mackerelio/mackerel-agent), a piece of software which is installed on your hosts to collect metrics and events and send them to [Mackerel](https://mackerel.io).
