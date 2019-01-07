@@ -15,7 +15,7 @@ compile:
       - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
       - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
       - cd $GOPATH/src/$REPO_NAME
-      - make build build/mackerel-plugin testconvention deps check-release-deps deb
+      - make build build/mackerel-plugin testconvention deps deb
 
     artifacts:
       untracked: true
