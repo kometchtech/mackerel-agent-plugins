@@ -1,7 +1,11 @@
 はじめに
 =====================
 
-このレポジトリは、公式がARM64/Aarch64に対応したパッケージを作成していないため、Aarch64向けにbuildするように対応改変したものです。
+このレポジトリは、公式がARM/Aarch64に対応したパッケージを作成していないため、ARM/Aarch64向けにbuildしたものです。
+各種アプリケーションについては、公式からの改変はありません。
+
+This repository was built for ARM / Aarch64 because formulas did not create packages corresponding to ARM / Aarch64.
+For various applications, there is no change from official.
 
 
 mackerel-agent-plugins  [![pipeline status](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/pipeline.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master) [![coverage report](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/coverage.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master)

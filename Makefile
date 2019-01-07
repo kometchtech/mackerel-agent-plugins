@@ -88,12 +88,12 @@ deb-v1:
 	for i in `cat packaging/deb/debian/source/include-binaries`; do \
 	  cp build/linux/arm/`basename $$i` packaging/deb/debian/; \
 	done
-	cd packaging/deb && debuild --no-tgz-check -rfakeroot -uc -us
+	cd packaging/deb && debuild --no-tgz-check -rfakeroot -uc -us -aarmhf
 
 deb-v2:
 	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
 	cp build/mackerel-plugin packaging/deb-v2/debian/
-	cd packaging/deb-v2 && debuild --no-tgz-check -rfakeroot -uc -us
+	cd packaging/deb-v2 && debuild --no-tgz-check -rfakeroot -uc -us -aarm64
 
 release: check-release-deps
 	(cd tool && cpanm -qn --installdeps .)

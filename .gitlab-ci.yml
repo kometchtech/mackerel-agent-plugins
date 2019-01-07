@@ -2,38 +2,36 @@ image: golang:latest
 
 variables:
   # Please edit to your GitLab project
+  VERSION: "0.53.0"
   REPO_NAME: gitlab.com/kometchtech/mackerel-agent-plugins
+  GIT_DEPTH: "1"
 
 stages:
     - build
     - deploy
 
-compile:
+compile_job:
     stage: build
+    only: 
+      - master
     script:
       - apt-get update
-      - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot \
-        binutils-aarch64-linux-gnu binutils-arm-linux-gnu
+      - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
       - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
       - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
-      #- cd ${GOPATH}/src/${REPO_NAME}
-      - cd ${CI_PROJECT_DIR}
+      - cd ${GOPATH}/src/${REPO_NAME}
       - make lint testconvention deps build deb
-
     artifacts:
       paths:
         - packaging/*.deb
-      name: ${CI_PROJECT_NAME}
-      when: on_success
+    when: on_success
 
-      #deploy:
-      #    stage: deploy
-      #    script:
-      #      - github.com/tcnksm/ghr
-      #
-      #    deploy:
-      #      - provider: script
-      #        skip_cleanup: true
-      #        file: "packaging/*.deb"
-      #        on:
-      #          branch: master
+deploy_job:
+    stage: deploy
+    only:
+      - master
+    before_script:
+      - go get -u github.com/tcnksm/ghr
+      - rm -f packaging/config.json packaging/*.orig.tar.gz
+    script:
+      - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -delete -n "v${VERSION}" "v${VERSION}" packaging/
