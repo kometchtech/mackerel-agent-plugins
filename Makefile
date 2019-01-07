@@ -2,8 +2,8 @@ VERSION = 0.53.0
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
-GOOS   ?= linux
-GOARCH ?= arm64
+GOOS   ?= $(shell go env GOOS)
+GOARCH ?= $(shell go env GOARCH)
 BINDIR  = build/$(GOOS)/$(GOARCH)
 
 all: lint cover testconvention rpm deb
