@@ -7,17 +7,7 @@ variables:
 
 stages:
   - build
-  - test
   - deploy
-
-test_job:
-  stage: test
-  script:
-    - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
-    - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
-    - cd ${GOPATH}/src/${REPO_NAME}
-    - make lint cover testconvention
-  allow_failure: true
 
 build_job:
   stage: build
@@ -42,5 +32,8 @@ deploy_job:
   before_script:
     - go get -u github.com/tcnksm/ghr
     - rm -f packaging/config.json packaging/*.orig.tar.gz
+    - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
+    - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
+    - cd ${GOPATH}/src/${REPO_NAME}
   script:
     - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace v${VERSION} packaging/
