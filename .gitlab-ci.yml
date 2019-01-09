@@ -33,4 +33,4 @@ deploy_job:
     - rm -f packaging/config.json packaging/*.orig.tar.gz
     - go get -u github.com/tcnksm/ghr
   script:
-    -  ghr -t $GITHUB_TOKEN -u kometchtech -r mackerel-agent-plugins -replace $VERSION packaging/
+    - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace "v${VERSION}" packaging/
