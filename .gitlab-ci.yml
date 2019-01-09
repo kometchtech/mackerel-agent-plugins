@@ -32,4 +32,4 @@ deploy_job:
   before_script:
     - go get -u github.com/aktau/github-release
   script:
-    - export GITHUB_TOKEN=${GITHUB_TOKEN} github-release upload --user kometchtech --repo mackerel-agent-plugins --tag ${VERSION} --file packaging/*.deb
+    - GITHUB_TOKEN=${GITHUB_TOKEN} github-release upload --user kometchtech --repo mackerel-agent-plugins --tag ${VERSION} --file packaging/*.deb
