@@ -2,7 +2,7 @@ image: golang:latest
 
 variables:
   # Please edit to your GitLab project
-  VERSION: "0.53.0"
+  VERSION: "v0.53.0"
   REPO_NAME: gitlab.com/kometchtech/mackerel-agent-plugins
 
 stages:
@@ -36,4 +36,4 @@ deploy_job:
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
     - cd ${GOPATH}/src/${REPO_NAME}
   script:
-    - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace v${VERSION} packaging/
+    - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace ${VERSION} packaging/
