@@ -30,8 +30,7 @@ deploy_job:
   stage: deploy
   only:
     - master
-  before_script:
+  script:
     - rm -f packaging/config.json packaging/*.orig.tar.gz
     - go get -u github.com/tcnksm/ghr
-  script:
     - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace ${VERSION} packaging/
