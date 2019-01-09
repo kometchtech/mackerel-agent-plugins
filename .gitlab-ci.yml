@@ -30,6 +30,7 @@ deploy_job:
   only:
     - master
   before_script:
-    - go get -u github.com/aktau/github-release
+    - rm -f packaging/config.json packaging/*.orig.tar.gz
+    - go get -u github.com/tcnksm/ghr
   script:
-    - GITHUB_TOKEN=${GITHUB_TOKEN} github-release upload --user kometchtech --repo mackerel-agent-plugins --tag ${VERSION} --file packaging/*.deb
+    -  ghr -u kometchtech -r mackerel-agent-plugins $VERSION packaging/
