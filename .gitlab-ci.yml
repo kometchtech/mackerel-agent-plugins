@@ -4,35 +4,45 @@ variables:
   # Please edit to your GitLab project
   VERSION: "0.53.0"
   REPO_NAME: gitlab.com/kometchtech/mackerel-agent-plugins
-  GIT_DEPTH: "1"
 
 stages:
-    - build
-    - deploy
+  - build
+  - test
+  - deploy
 
-compile_job:
-    stage: build
-    only: 
-      - master
-    script:
-      - apt-get update
-      - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
-      - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
-      - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
-      - cd ${GOPATH}/src/${REPO_NAME}
-      - make lint test
-      - make deps build deb
-    artifacts:
-      paths:
-        - packaging/*.deb
+test_job:
+  stage: test
+  script:
+    - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
+    - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
+    - cd ${GOPATH}/src/${REPO_NAME}
+    - make lint cover testconvention
+  allow_failure: true
+
+build_job:
+  stage: build
+  only: 
+    - master
+  variables:
+    - GIT_DEPTH: "1"
+  script:
+    - apt-get update
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
+    - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
+    - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
+    - cd ${GOPATH}/src/${REPO_NAME}
+    - make deps build deb
+  artifacts:
+    paths:
+      - packaging/*.deb
     when: on_success
 
 deploy_job:
-    stage: deploy
-    only:
-      - master
-    before_script:
-      - go get -u github.com/tcnksm/ghr
-      - rm -f packaging/config.json packaging/*.orig.tar.gz
-    script:
-      - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -n v${VERSION} -replace v${VERSION} packaging/
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - go get -u github.com/tcnksm/ghr
+    - rm -f packaging/config.json packaging/*.orig.tar.gz
+  script:
+    - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -n v${VERSION} -replace v${VERSION} packaging/
