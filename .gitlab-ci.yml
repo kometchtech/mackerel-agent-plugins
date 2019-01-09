@@ -1,9 +1,8 @@
 image: golang:latest
 
 variables:
-  # Please edit to your GitLab project
-  VERSION: v0.53.0
-  REPO_NAME: gitlab.com/kometchtech/mackerel-agent-plugins
+  VERSION: 'v0.53.0'
+  REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
 
 stages:
   - build
@@ -11,7 +10,7 @@ stages:
 
 build_job:
   stage: build
-  only: 
+  only:
     - master
   script:
     - apt-get update
@@ -24,6 +23,7 @@ build_job:
     paths:
       - packaging/*.deb
     when: on_success
+    expire_in: 1d
 
 deploy_job:
   stage: deploy
