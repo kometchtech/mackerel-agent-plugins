@@ -3,6 +3,7 @@ image: golang:latest
 variables:
   VERSION: 'v0.53.0'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
+  GIT_DEPTH: '1'
 
 stages:
   - build
@@ -33,4 +34,4 @@ deploy_job:
     - rm -f packaging/config.json packaging/*.orig.tar.gz
     - go get -u github.com/tcnksm/ghr
   script:
-    - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace "v${VERSION}" packaging/
+    - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace ${VERSION} packaging/
