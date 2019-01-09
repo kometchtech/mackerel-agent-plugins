@@ -2,7 +2,7 @@ image: golang:latest
 
 variables:
   # Please edit to your GitLab project
-  VERSION: "v0.53.0"
+  VERSION: v0.53.0
   REPO_NAME: gitlab.com/kometchtech/mackerel-agent-plugins
 
 stages:
