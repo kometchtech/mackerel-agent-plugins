@@ -20,7 +20,8 @@ compile_job:
       - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
       - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
       - cd ${GOPATH}/src/${REPO_NAME}
-      - make lint testconvention deps build deb
+      - make lint test
+      - make deps build deb
     artifacts:
       paths:
         - packaging/*.deb
@@ -34,4 +35,4 @@ deploy_job:
       - go get -u github.com/tcnksm/ghr
       - rm -f packaging/config.json packaging/*.orig.tar.gz
     script:
-      - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace "v${VERSION}" packaging/
+      - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -n v${VERSION} -replace v${VERSION} packaging/
