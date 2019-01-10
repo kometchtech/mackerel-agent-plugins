@@ -7,6 +7,7 @@ variables:
 
 stages:
   - build
+  - test
   - deploy
 
 build_job:
@@ -14,7 +15,6 @@ build_job:
   only:
     - master
   before_script:
-
     - apt-get update
     - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
     - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
@@ -27,6 +27,16 @@ build_job:
       - packaging/*.deb
     when: on_success
     expire_in: 1d
+
+test_job:
+  stage: test
+  before_script:
+    - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
+    - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
+  script:
+    - cd ${GOPATH}/src/${REPO_NAME}
+    - make lint cover testconvention
+  when: allow_failure
 
 deploy_job:
   stage: deploy
