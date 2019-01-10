@@ -1,7 +1,7 @@
 image: golang:latest
 
 variables:
-  VERSION: 'v0.53.0'
+  VERSION: 'v0.54.0'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
 
