@@ -13,11 +13,13 @@ build_job:
   stage: build
   only:
     - master
-  script:
+  before_script:
+
     - apt-get update
     - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
     - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
+  script:
     - cd ${GOPATH}/src/${REPO_NAME}
     - make deps build deb
   artifacts:
@@ -30,7 +32,8 @@ deploy_job:
   stage: deploy
   only:
     - master
-  script:
+  before_script:
     - rm -f packaging/config.json packaging/*.orig.tar.gz
     - go get -u github.com/tcnksm/ghr
+  script:
     - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace ${VERSION} packaging/
