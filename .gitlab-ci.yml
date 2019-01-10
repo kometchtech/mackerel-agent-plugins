@@ -16,7 +16,7 @@ build_job:
     - master
   before_script:
     - apt-get update
-    - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq devscripts debhelper rpm fakeroot binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf
     - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
   script:
