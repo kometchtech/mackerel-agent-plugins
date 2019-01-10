@@ -65,7 +65,7 @@ rpm: rpm-v1 rpm-v2
 rpm-v1:
 	$(MAKE) build GOOS=linux GOARCH=arm
 	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm" \
-	  --define "_version ${VERSION}" --define "buildarch arm-linux" \
+	  --define "_version ${VERSION}" --define "buildarch armv7l" \
 	  -bb packaging/rpm/mackerel-agent-plugins.spec
 	$(MAKE) build GOOS=linux GOARCH=arm64
 	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm64" \
