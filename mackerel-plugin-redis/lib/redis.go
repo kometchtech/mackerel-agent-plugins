@@ -209,13 +209,6 @@ func (m RedisPlugin) FetchMetrics() (map[string]interface{}, error) {
 	stat["keys"] = keysStat
 	stat["expires"] = expiresStat
 
-	if _, ok := stat["keys"]; !ok {
-		stat["keys"] = 0
-	}
-	if _, ok := stat["expires"]; !ok {
-		stat["expires"] = 0
-	}
-
 	if _, ok := stat["expired_keys"]; ok {
 		stat["expired"] = stat["expired_keys"]
 	} else {
@@ -271,6 +264,7 @@ func (m RedisPlugin) GraphDefinition() map[string]mp.Graphs {
 				{Name: "keys", Label: "Keys", Diff: false},
 				{Name: "expires", Label: "Keys with expiration", Diff: false},
 				{Name: "expired", Label: "Expired Keys", Diff: true},
+				{Name: "evicted_keys", Label: "Evicted Keys", Diff: false},
 			},
 		},
 		"keyspace": {
