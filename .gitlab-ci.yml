@@ -36,7 +36,7 @@ test_job:
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
     - make lint cover testconvention
-  when: allow_failure
+  allow_failure: true
 
 deploy_job:
   stage: deploy
