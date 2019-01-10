@@ -21,7 +21,7 @@ build_job:
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
-    - make deps build deb
+    - make deps build rpm deb
   artifacts:
     paths:
       - packaging/*.deb
