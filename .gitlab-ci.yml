@@ -25,6 +25,7 @@ build_job:
   artifacts:
     paths:
       - packaging/*.deb
+      - packaging/*.rpm
     when: on_success
     expire_in: 1d
 
