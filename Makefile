@@ -66,20 +66,20 @@ rpm-v1:
 	$(MAKE) build GOOS=linux GOARCH=arm
 	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm" \
 	  --define "_version ${VERSION}" --define "buildarch noarch" \
-		--target armv7hllinux-gnu -bb packaging/rpm/mackerel-agent-plugins.spec
+		--target armv7l -bb packaging/rpm/mackerel-agent-plugins.spec
 	$(MAKE) build GOOS=linux GOARCH=arm64
 	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm64" \
 	  --define "_version ${VERSION}" --define "buildarch aarch64" \
-	  --target aarch64-linux-gnu -bb packaging/rpm/mackerel-agent-plugins.spec
+	  --target armv8-a -bb packaging/rpm/mackerel-agent-plugins.spec
 
 rpm-v2:
 	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
 	rpmbuild --define "_sourcedir `pwd`"  --define "_version ${VERSION}" \
 	  --define "buildarch aarch64" --define "dist .el7.centos" \
-	  --target aarch64-linux-gnu -bb packaging/rpm/mackerel-agent-plugins-v2.spec
+	  --target armv8-a -bb packaging/rpm/mackerel-agent-plugins-v2.spec
 	rpmbuild --define "_sourcedir `pwd`"  --define "_version ${VERSION}" \
 	  --define "buildarch aarch64" --define "dist .amzn2" \
-	  --target aarch64-linux-gnu -bb packaging/rpm/mackerel-agent-plugins-v2.spec
+	  --target armv8-a -bb packaging/rpm/mackerel-agent-plugins-v2.spec
 
 deb: deb-v1 deb-v2
 
