@@ -8,6 +8,16 @@ This repository was built for ARM / Aarch64 because formulas did not create pack
 For various applications, there is no change from official.
 
 
+注意 notice
+=====================
+以下のパッケージについて、実際の動作チェックは出来ていません。
+
+For the following packages, the actual operation check is not done.
+
+* mackerel-agent-plugins-x.xx.x-1.amzn2.noarch.rpm
+* mackerel-agent-plugins-x.xx.x-1.el7.centos.noarch.rpm
+* mackerel-agent-plugins-x.xx.x-1.noarch.rpm
+
 mackerel-agent-plugins  [![pipeline status](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/pipeline.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master) [![coverage report](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/coverage.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master)
 
 ======================
