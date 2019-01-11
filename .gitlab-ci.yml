@@ -23,10 +23,11 @@ build_job:
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
     - make deps build rpm deb
+    - mv /root/rpmbuild/RPMS/noarch/*.rpm packaging/
   artifacts:
     paths:
       - packaging/*.deb
-      - /root/rpmbuild/RPMS/noarch/*.rpm
+      - packaging/*.rpm
     when: on_success
     expire_in: 1d
 
