@@ -26,7 +26,7 @@ build_job:
   artifacts:
     paths:
       - packaging/*.deb
-      - packaging/*.rpm
+      - /root/rpmbuild/RPMS/noarch/*.rpm
     when: on_success
     expire_in: 1d
 
