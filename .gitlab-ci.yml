@@ -35,7 +35,7 @@ test_job:
   stage: test
   before_script:
     - apt-get update
-    - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq redis
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq redis-server
     - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
   script:
