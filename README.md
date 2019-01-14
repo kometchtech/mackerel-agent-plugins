@@ -19,7 +19,6 @@ For the following packages, the actual operation check is not done.
 * mackerel-agent-plugins-x.xx.x-1.noarch.rpm
 
 mackerel-agent-plugins  [![pipeline status](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/pipeline.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master) [![coverage report](https://gitlab.com/kometchtech/mackerel-agent-plugins/badges/master/coverage.svg)](https://gitlab.com/kometchtech/mackerel-agent-plugins/commits/master)
-
 ======================
 
 This is the official plugin pack for [mackerel-agent](https://github.com/mackerelio/mackerel-agent), a piece of software which is installed on your hosts to collect metrics and events and send them to [Mackerel](https://mackerel.io).
