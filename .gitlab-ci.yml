@@ -1,4 +1,4 @@
-image: golang:1.11
+image: golang:latest
 
 variables:
   VERSION: 'v0.56.0'
@@ -29,11 +29,10 @@ build_job:
     - mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
     - go get github.com/motemen/gobump/cmd/gobump
-    - go get github.com/mackerelio/golib/cmd/mackerel-github-release
     - go get github.com/mackerelio/go-mackerel-plugin-helper
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
-    - make build rpm deb
+    - GO111MODULE=on make build rpm deb
     - mv /root/rpmbuild/RPMS/noarch/*.rpm packaging/
   artifacts:
     paths:
