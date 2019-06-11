@@ -4,6 +4,7 @@ variables:
   VERSION: 'v0.56.0'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
+  GO111MODULE: 'on'
 
 cache:
   paths:
@@ -20,8 +21,6 @@ stages:
 
 build_job:
   stage: build
-  environment:
-    GO111MODULE: on
   only:
     - master
   before_script:
@@ -45,8 +44,6 @@ build_job:
 
 test_job:
   stage: test
-  environment:
-    GO111MODULE: on
   before_script:
     - apt-get update
     - DEBIAN_FRONTEND=noninteractive apt-get install -y -qq redis-server memcached
@@ -59,8 +56,6 @@ test_job:
 
 deploy_job:
   stage: deploy
-  environment:
-    GO111MODULE: on
   only:
     - master
   before_script:
