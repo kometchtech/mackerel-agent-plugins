@@ -4,6 +4,7 @@ variables:
   VERSION: 'v0.56.0'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
+  GOPATH: '~/gopath/bin'
 
 stages:
   - build
@@ -22,7 +23,7 @@ build_job:
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
-    - make build rpm deb
+    - make all
     - mv /root/rpmbuild/RPMS/noarch/*.rpm packaging/
   artifacts:
     paths:
