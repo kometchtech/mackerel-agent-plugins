@@ -4,7 +4,6 @@ variables:
   VERSION: 'v0.56.0'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
-  GOPATH: '~/gopath/bin'
 
 stages:
   - build
