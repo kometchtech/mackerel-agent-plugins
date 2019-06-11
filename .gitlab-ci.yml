@@ -22,7 +22,7 @@ build_job:
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
-    - make deps build rpm deb
+    - make build rpm deb
     - mv /root/rpmbuild/RPMS/noarch/*.rpm packaging/
   artifacts:
     paths:
