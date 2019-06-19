@@ -59,6 +59,8 @@ test_job:
 
 deploy_job:
   stage: deploy
+  job:
+    cache: {}
   only:
     - master
   before_script:
