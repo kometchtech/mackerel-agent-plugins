@@ -76,5 +76,3 @@ cleanup:
     policy: pull
   script:
     - rm -rf /home/gitlab/cache/kometchtech/mackerel-agent-plugins/${CI_COMMIT_REF_NAME}*
-  except:
-    - master
