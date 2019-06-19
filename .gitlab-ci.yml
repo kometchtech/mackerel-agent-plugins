@@ -7,17 +7,20 @@ variables:
   GO111MODULE: 'on'
 
 cache:
-  paths:
-    - /apt-cache
-    - /go/src/github.com
-    - /go/src/golang.org
-    - /go/src/google.golang.org
-    - /go/src/gopkg.in
+  untracked: true
+  key: "$CI_COMMIT_REF_NAME"
+  #  paths:
+  #    - /apt-cache
+  #    - /go/src/github.com
+  #    - /go/src/golang.org
+  #    - /go/src/google.golang.org
+  #    - /go/src/gopkg.in
 
 stages:
   - build
   - test
   - deploy
+  - cleanup
 
 build_job:
   stage: build
@@ -63,3 +66,13 @@ deploy_job:
     - go get -u github.com/tcnksm/ghr
   script:
     - ghr -t ${GITHUB_TOKEN} -u kometchtech -r mackerel-agent-plugins -replace ${VERSION} packaging/
+
+cleanup:
+  stage: cleanup
+  cache:
+    key: empty
+    policy: pull
+  script:
+    - rm -rf /home/gitlab/cache/kometchtech/mackerel-agent-plugins/${CI_COMMIT_REF_NAME}*
+  except:
+    - master
