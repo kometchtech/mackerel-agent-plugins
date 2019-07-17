@@ -145,6 +145,8 @@ github.com/lestrrat-go/tcputil v0.0.0-20180223003554-d3c7f98154fb/go.mod h1:bBam
 github.com/lib/pq v1.0.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
 github.com/lib/pq v1.1.1 h1:sJZmqHoEaY7f+NPP8pgLB/WxulyR3fewgCM2qaSlBb4=
 github.com/lib/pq v1.1.1/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
+github.com/lib/pq v1.2.0 h1:LXpIM/LZ5xGFhOpXAQUIMM1HdyqzVYM13zNdjCEEcA0=
+github.com/lib/pq v1.2.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
 github.com/mackerelio/go-mackerel-plugin v0.0.0-20190524092722-c2289a3ef40e h1:/iM4cNHHBnza6D2rsbvehlNEb2LKSG4M51sYsWYAH/U=
 github.com/mackerelio/go-mackerel-plugin v0.0.0-20190524092722-c2289a3ef40e/go.mod h1:hV+0M18+q787IEDQhLficGPJoEfx0JbPuhqmU1z7l/M=
 github.com/mackerelio/go-mackerel-plugin-helper v0.0.0-20190524092734-fdbc9682b640 h1:oS4uiThs9vcC/DJGzV8djzqiphxfPvw7nSWuXgpXTJg=
