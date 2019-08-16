@@ -52,7 +52,7 @@ require (
 	github.com/naokibtn/go-ses v0.0.0-20150122091825-74908b78cc76
 	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
-	github.com/stretchr/testify v1.3.0
+	github.com/stretchr/testify v1.4.0
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
 	github.com/urfave/cli v1.21.0
 	github.com/ziutek/mymysql v1.5.4
