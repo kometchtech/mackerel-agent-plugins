@@ -54,7 +54,7 @@ require (
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
 	github.com/stretchr/testify v1.4.0
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
-	github.com/urfave/cli v1.21.0
+	github.com/urfave/cli v1.22.0
 	github.com/ziutek/mymysql v1.5.4
 	go.opencensus.io v0.22.0 // indirect
 	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5 // indirect
