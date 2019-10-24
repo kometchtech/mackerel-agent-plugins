@@ -100,6 +100,17 @@ Some plugins may not work on CentOS/RedHat 5 because the golang compiler (gc) do
 
 Some plugins are not contained in rpm and deb packages. If you want to use them, build them.
 
+<<<<<<< HEAD
+=======
+Contribution
+============
+
+* see [The official plugin registry](https://mackerel.io/blog/entry/feature/20171116#The-official-plugin-registry) and [Pull requests to the existing central repository](https://mackerel.io/blog/entry/feature/20171116#Pull-Requests-to-the-existing-central-repository)
+* fork it
+* develop the plugin you want
+* create a pullrequest!
+
+>>>>>>> upstream/master
 License
 =======
 ```
