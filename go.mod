@@ -9,7 +9,7 @@ require (
 	github.com/Songmu/timeout v0.4.0
 	github.com/alouca/gologger v0.0.0-20120904114645-7d4b7291de9c // indirect
 	github.com/alouca/gosnmp v0.0.0-20170620005048-04d83944c9ab
-	github.com/aws/aws-sdk-go v1.23.10
+	github.com/aws/aws-sdk-go v1.25.17
 	github.com/containerd/continuity v0.0.0-20190426062206-aaeac12a7ffc // indirect
 	github.com/crowdmob/goamz v0.0.0-20150128194925-3a06871fe9fc
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
@@ -19,7 +19,7 @@ require (
 	github.com/garyburd/redigo v1.6.0
 	github.com/github/hub v2.11.2+incompatible // indirect
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
-	github.com/go-redis/redis v6.15.2+incompatible
+	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/go-sql-driver/mysql v1.4.1 // indirect
 	github.com/golang/mock v1.3.1 // indirect
 	github.com/google/btree v1.0.0 // indirect
@@ -54,7 +54,7 @@ require (
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
 	github.com/stretchr/testify v1.4.0
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
-	github.com/urfave/cli v1.21.0
+	github.com/urfave/cli v1.22.1
 	github.com/ziutek/mymysql v1.5.4
 	go.opencensus.io v0.22.0 // indirect
 	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5 // indirect
