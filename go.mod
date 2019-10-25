@@ -10,14 +10,9 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d
 	github.com/alouca/gologger v0.0.0-20120904114645-7d4b7291de9c // indirect
 	github.com/alouca/gosnmp v0.0.0-20170620005048-04d83944c9ab
-<<<<<<< HEAD
-	github.com/aws/aws-sdk-go v1.25.18
-	github.com/containerd/continuity v0.0.0-20190426062206-aaeac12a7ffc // indirect
-=======
 	github.com/aws/aws-sdk-go v1.25.7
 	github.com/containerd/continuity v0.0.0-20190827140505-75bee3e2ccb6 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
->>>>>>> upstream/master
 	github.com/crowdmob/goamz v0.0.0-20150128194925-3a06871fe9fc
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
 	github.com/fsouza/go-dockerclient v1.4.4
@@ -25,10 +20,7 @@ require (
 	github.com/fzzy/radix v0.5.6
 	github.com/garyburd/redigo v1.6.0
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
-<<<<<<< HEAD
-=======
 	github.com/go-ole/go-ole v1.2.4 // indirect
->>>>>>> upstream/master
 	github.com/go-redis/redis v6.15.6+incompatible
 	github.com/go-sql-driver/mysql v1.4.1 // indirect
 	github.com/gogo/protobuf v1.3.0 // indirect
@@ -39,17 +31,10 @@ require (
 	github.com/lestrrat-go/tcptest v0.0.0-20180223004312-f0345789c593
 	github.com/lestrrat-go/tcputil v0.0.0-20180223003554-d3c7f98154fb // indirect
 	github.com/lib/pq v1.2.0
-<<<<<<< HEAD
-	github.com/mackerelio/go-mackerel-plugin v0.0.0-20190524092722-c2289a3ef40e
-	github.com/mackerelio/go-mackerel-plugin-helper v0.0.0-20190524092734-fdbc9682b640
-	github.com/mackerelio/go-osstat v0.0.0-20190412014440-b90c0b34edef
-	github.com/mackerelio/golib v0.0.0-20190411032134-c87047ca454e
-=======
 	github.com/mackerelio/go-mackerel-plugin v0.0.0-20190712052230-7d51210247a3
 	github.com/mackerelio/go-mackerel-plugin-helper v0.0.0-20190712052147-cc61b45daff1
 	github.com/mackerelio/go-osstat v0.0.0-20190926055807-f0e8d2d4e259
 	github.com/mackerelio/golib v0.0.0-20191002020229-a65782d392ca
->>>>>>> upstream/master
 	github.com/mackerelio/mackerel-plugin-aws-ec2 v1.0.1
 	github.com/mackerelio/mackerel-plugin-aws-kinesis-firehose v1.0.1
 	github.com/mackerelio/mackerel-plugin-aws-rekognition v1.0.1
@@ -67,13 +52,9 @@ require (
 	github.com/onsi/gomega v1.7.0 // indirect
 	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
-<<<<<<< HEAD
 	github.com/stretchr/testify v1.4.0
-=======
 	github.com/sourcegraph/go-ses v0.0.0-20160405160939-6bd8d17cf7c1 // indirect
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271 // indirect
-	github.com/stretchr/testify v1.3.0
->>>>>>> upstream/master
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
 	github.com/urfave/cli v1.22.1
 	github.com/ziutek/mymysql v1.5.4
