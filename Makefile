@@ -1,10 +1,12 @@
-VERSION = 0.59.0
+VERSION = 0.59.1
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
 GOOS   ?= linux
 GOARCH ?= arm64
 BINDIR  = build/$(GOOS)/$(GOARCH)
+
+export GO111MODULE=on
 
 .PHONY: all
 all: lint cover testconvention rpm deb
@@ -40,8 +42,8 @@ testconvention:
 
 .PHONY: testdeps
 testdeps:
-	GO111MODULE=off go get golang.org/x/lint/golint  \
-	  golang.org/x/tools/cmd/cover   \
+	cd && go get golang.org/x/lint/golint \
+	  golang.org/x/tools/cmd/cover \
 	  github.com/pierrre/gotestcover \
 	  github.com/mattn/goveralls
 
@@ -114,3 +116,8 @@ release: check-release-deps
 .PHONY: clean
 clean:
 	@if [ -d build ]; then rm -rfv build; fi
+
+.PHONY: update
+update:
+	go get -u ./...
+	go mod tidy
