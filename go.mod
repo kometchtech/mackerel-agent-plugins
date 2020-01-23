@@ -12,7 +12,11 @@ require (
 	github.com/alouca/gologger v0.0.0-20120904114645-7d4b7291de9c // indirect
 	github.com/alouca/gosnmp v0.0.0-20170620005048-04d83944c9ab
 <<<<<<< HEAD
+<<<<<<< HEAD
 	github.com/aws/aws-sdk-go v1.25.43
+=======
+	github.com/aws/aws-sdk-go v1.28.6
+>>>>>>> 98f851f42777e63f00b2b9a94511143d1bd546f0
 	github.com/containerd/continuity v0.0.0-20190827140505-75bee3e2ccb6 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/crowdmob/goamz v0.0.0-20150128194925-3a06871fe9fc
