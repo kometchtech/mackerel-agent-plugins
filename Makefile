@@ -2,8 +2,8 @@ VERSION = 0.59.1
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
-GOOS   ?= linux
-GOARCH ?= arm64
+GOOS   ?= $(shell go env GOOS)
+GOARCH ?= $(shell go env GOARCH)
 BINDIR  = build/$(GOOS)/$(GOARCH)
 
 export GO111MODULE=on
@@ -75,7 +75,7 @@ rpm-v1:
 	$(MAKE) build GOOS=linux GOARCH=arm
 	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm" \
 	  --define "_version ${VERSION}" --define "buildarch noarch" \
-		--target armv7l -bb packaging/rpm/mackerel-agent-plugins.spec
+	  --target armv7l -bb packaging/rpm/mackerel-agent-plugins.spec
 	$(MAKE) build GOOS=linux GOARCH=arm64
 	rpmbuild --define "_sourcedir `pwd`" --define "_bindir build/linux/arm64" \
 	  --define "_version ${VERSION}" --define "buildarch noarch" \
@@ -121,3 +121,4 @@ clean:
 update:
 	go get -u ./...
 	go mod tidy
+
