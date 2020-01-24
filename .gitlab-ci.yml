@@ -1,7 +1,7 @@
 image: golang:1.12
 
 variables:
-  VERSION: "cat ${CI_PROJECT_DIR}/Makefile | grep VERSION | head -n 1 | awk '{print $3}'"
+#  VERSION: "cat ${CI_PROJECT_DIR}/Makefile | grep VERSION | head -n 1 | awk '{print $3}'"
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
   GO111MODULE: 'on'
@@ -63,6 +63,7 @@ deploy_job:
   only:
     - master
   before_script:
+    - VERSION=`cat ${CI_PROJECT_DIR}/Makefile | grep VERSION | head -n 1 | awk '{print $3}'`
     - rm -f packaging/config.json packaging/*.orig.tar.gz
     - go get -u github.com/tcnksm/ghr
   script:
