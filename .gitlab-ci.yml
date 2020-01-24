@@ -1,7 +1,7 @@
 image: golang:1.12
 
 variables:
-  VERSION: 'v0.59.1'
+  VERSION: '$CI_COMMIT_TAG'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
   GO111MODULE: 'on'
