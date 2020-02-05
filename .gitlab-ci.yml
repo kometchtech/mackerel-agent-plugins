@@ -31,8 +31,8 @@ build_job:
     - mkdir -p ${GOPATH}/src/$(dirname ${REPO_NAME})
     - mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
     - ln -svf ${CI_PROJECT_DIR} ${GOPATH}/src/${REPO_NAME}
-    - go get github.com/motemen/gobump/cmd/gobump
-    - go get github.com/mackerelio/go-mackerel-plugin-helper
+    - go get github.com/x-motemen/gobump/cmd/gobump
+    - go get github.com/mackerelio/golib/cmd/mackerel-github-release
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
     - make build rpm deb
