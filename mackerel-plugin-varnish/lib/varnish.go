@@ -27,6 +27,8 @@ var graphdef = map[string]mp.Graphs{
 			{Name: "backend_req", Label: "Requests", Diff: true},
 			{Name: "backend_conn", Label: "Conn success", Diff: true},
 			{Name: "backend_fail", Label: "Conn fail", Diff: true},
+			{Name: "backend_reuse", Label: "Conn reuse", Diff: true},
+			{Name: "backend_recycle", Label: "Conn recycle", Diff: true},
 		},
 	},
 	"varnish.objects": {
@@ -124,6 +126,10 @@ func (m VarnishPlugin) FetchMetrics() (map[string]interface{}, error) {
 			stat["backend_conn"] = tmpv
 		case "MAIN.backend_fail":
 			stat["backend_fail"] = tmpv
+		case "MAIN.backend_reuse":
+			stat["backend_reuse"] = tmpv
+		case "MAIN.backend_recycle":
+			stat["backend_recycle"] = tmpv
 		case "MAIN.n_object":
 			stat["n_object"] = tmpv
 		case "MAIN.n_objectcore":
@@ -138,11 +144,10 @@ func (m VarnishPlugin) FetchMetrics() (map[string]interface{}, error) {
 			stat["busy_wakeup"] = tmpv
 		default:
 			smamatch := smaexp.FindStringSubmatch(match[1])
-			if smamatch == nil || smamatch[1] == "Transient" {
+			if smamatch == nil {
 				continue
 			}
 			if smamatch[2] == "g_alloc" {
-				fmt.Printf("%+v\n", smamatch)
 				stat["varnish.sma.g_alloc."+smamatch[1]+".g_alloc"] = tmpv
 			} else if smamatch[2] == "g_bytes" {
 				stat["varnish.sma.memory."+smamatch[1]+".allocated"] = tmpv
