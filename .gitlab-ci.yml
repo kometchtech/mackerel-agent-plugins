@@ -1,7 +1,6 @@
 image: golang:1.12
 
 variables:
-    #  VERSION: 'v0.59.1'
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
   GIT_DEPTH: '1'
   GO111MODULE: 'on'
@@ -9,12 +8,12 @@ variables:
 cache:
   untracked: true
   key: "$CI_COMMIT_REF_NAME"
-  #  paths:
-  #    - /apt-cache
-  #    - /go/src/github.com
-  #    - /go/src/golang.org
-  #    - /go/src/google.golang.org
-  #    - /go/src/gopkg.in
+  paths:
+      - /apt-cache
+      - /go/src/github.com
+      - /go/src/golang.org
+      - /go/src/google.golang.org
+      - /go/src/gopkg.in
 
 stages:
   - build
