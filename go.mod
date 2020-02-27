@@ -17,12 +17,12 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/crowdmob/goamz v0.0.0-20150128194925-3a06871fe9fc
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
-	github.com/fsouza/go-dockerclient v1.6.0
+	github.com/fsouza/go-dockerclient v1.6.3
 	github.com/fukata/golang-stats-api-handler v1.0.0
 	github.com/fzzy/radix v0.5.6
 	github.com/garyburd/redigo v1.6.0
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
-	github.com/go-ldap/ldap/v3 v3.1.5
+	github.com/go-ldap/ldap/v3 v3.1.7
 	github.com/go-ole/go-ole v1.2.4 // indirect
 	github.com/go-redis/redis v6.15.7+incompatible
 	github.com/go-sql-driver/mysql v1.4.1 // indirect
@@ -58,7 +58,7 @@ require (
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
 	github.com/sourcegraph/go-ses v0.0.0-20160405160939-6bd8d17cf7c1 // indirect
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271 // indirect
-	github.com/stretchr/testify v1.4.0
+	github.com/stretchr/testify v1.5.1
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
 	github.com/urfave/cli v1.22.2
 	github.com/ziutek/mymysql v1.5.4
