@@ -1,4 +1,4 @@
-VERSION = 0.60.1
+VERSION = 0.60.2
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
@@ -37,7 +37,7 @@ testgo: testdeps
 .PHONY: testconvention
 testconvention:
 	prove -r t/
-	go generate ./... && git diff --exit-code || \
+	go generate ./... && git diff --exit-code -- . ':(exclude)go.*' || \
 	  (echo 'please `go generate ./...` and commit them' && false)
 
 .PHONY: testdeps
