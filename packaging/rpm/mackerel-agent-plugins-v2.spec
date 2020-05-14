@@ -40,7 +40,6 @@ done
 %{__targetdir}/*
 
 %changelog
-=======
 * Thu May 14 2020 <mackerel-developers@hatena.ne.jp> - 0.60.2
 - Bump github.com/fsouza/go-dockerclient from 1.6.3 to 1.6.5 (by dependabot-preview[bot])
 - Bump github.com/lib/pq from 1.3.0 to 1.5.2 (by dependabot-preview[bot])
