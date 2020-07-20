@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	cloud.google.com/go v0.50.0 // indirect
-	github.com/Songmu/axslogparser v1.3.0
+	github.com/Songmu/axslogparser v1.4.0
 	github.com/Songmu/postailer v0.0.0-20181014062912-daaa1ba9cc39
 	github.com/Songmu/timeout v0.4.0
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d
@@ -22,15 +22,15 @@ require (
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-ldap/ldap/v3 v3.1.10
 	github.com/go-ole/go-ole v1.2.4 // indirect
-	github.com/go-redis/redis v6.15.7+incompatible
+	github.com/go-redis/redis v6.15.8+incompatible
 	github.com/golang/groupcache v0.0.0-20191027212112-611e8accdfc9 // indirect
-	github.com/hashicorp/go-version v1.2.0
+	github.com/hashicorp/go-version v1.2.1
 	github.com/jarcoal/httpmock v1.0.5
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/lestrrat-go/tcptest v0.0.0-20180223004312-f0345789c593
 	github.com/lestrrat-go/tcputil v0.0.0-20180223003554-d3c7f98154fb // indirect
-	github.com/lib/pq v1.6.0
+	github.com/lib/pq v1.7.0
 	github.com/mackerelio/go-mackerel-plugin v0.0.0-20200416053722-b68096c191d0
 	github.com/mackerelio/go-mackerel-plugin-helper v0.0.0-20200416053706-9aba6664c25d
 	github.com/mackerelio/go-osstat v0.1.0
@@ -53,7 +53,7 @@ require (
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
 	github.com/sourcegraph/go-ses v0.0.0-20160405160939-6bd8d17cf7c1 // indirect
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271 // indirect
-	github.com/stretchr/testify v1.6.0
+	github.com/stretchr/testify v1.6.1
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
 	github.com/urfave/cli v1.22.4
 	github.com/ziutek/mymysql v1.5.4
