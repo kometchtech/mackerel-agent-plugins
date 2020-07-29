@@ -10,7 +10,7 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d
 	github.com/alouca/gologger v0.0.0-20120904114645-7d4b7291de9c // indirect
 	github.com/alouca/gosnmp v0.0.0-20170620005048-04d83944c9ab
-	github.com/aws/aws-sdk-go v1.31.11
+	github.com/aws/aws-sdk-go v1.33.12
 	github.com/containerd/containerd v1.3.2 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/crowdmob/goamz v0.0.0-20150128194925-3a06871fe9fc
@@ -30,7 +30,7 @@ require (
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/lestrrat-go/tcptest v0.0.0-20180223004312-f0345789c593
 	github.com/lestrrat-go/tcputil v0.0.0-20180223003554-d3c7f98154fb // indirect
-	github.com/lib/pq v1.7.0
+	github.com/lib/pq v1.7.1
 	github.com/mackerelio/go-mackerel-plugin v0.0.0-20200416053722-b68096c191d0
 	github.com/mackerelio/go-mackerel-plugin-helper v0.0.0-20200416053706-9aba6664c25d
 	github.com/mackerelio/go-osstat v0.1.0
