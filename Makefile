@@ -1,4 +1,4 @@
-VERSION = 0.62.0
+VERSION = 0.63.0
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
@@ -22,10 +22,14 @@ build:
 	  $(MAKE) $(BINDIR)/$$i; \
 	done
 
-build/mackerel-plugin:
+build/mackerel-plugin: $(patsubst %,depends_on,$(GOOS)$(GOARCH))
 	mkdir -p build
 	go build -ldflags="-s -w -X main.gitcommit=$(CURRENT_REVISION)" \
 	  -o build/mackerel-plugin
+
+.PHONY: depends_on
+depends_on:
+	@:
 
 .PHONY: test
 test: testgo lint testconvention
@@ -103,7 +107,21 @@ deb-v1:
 	cd packaging/deb && debuild --no-tgz-check -rfakeroot -uc -us -aarmhf
 
 .PHONY: deb-v2
+<<<<<<< HEAD
 deb-v2:
+	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
+=======
+deb-v2: deb-v2-x86 deb-v2-arm
+
+.PHONY: deb-v2-x86
+deb-v2-x86:
+	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=amd64
+>>>>>>> upstream/master
+	cp build/mackerel-plugin packaging/deb-v2/debian/
+	cd packaging/deb-v2 && debuild --no-tgz-check -rfakeroot -uc -us -aarm64
+
+.PHONY: deb-v2-arm
+deb-v2-arm:
 	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
 	cp build/mackerel-plugin packaging/deb-v2/debian/
 	cd packaging/deb-v2 && debuild --no-tgz-check -rfakeroot -uc -us -aarm64
