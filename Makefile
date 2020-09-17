@@ -86,7 +86,24 @@ rpm-v1:
 	  --target aarch64 -bb packaging/rpm/mackerel-agent-plugins.spec
 
 .PHONY: rpm-v2
+<<<<<<< HEAD
 rpm-v2:
+=======
+rpm-v2: rpm-v2-x86 rpm-v2-arm
+
+.PHONY: rpm-v2-x86
+rpm-v2-x86:
+	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=amd64
+	rpmbuild --define "_sourcedir `pwd`"  --define "_version ${VERSION}" \
+	  --define "buildarch x86_64" --define "dist .el7.centos" \
+	  --target x86_64 -bb packaging/rpm/mackerel-agent-plugins-v2.spec
+	rpmbuild --define "_sourcedir `pwd`"  --define "_version ${VERSION}" \
+	  --define "buildarch x86_64" --define "dist .amzn2" \
+	  --target x86_64 -bb packaging/rpm/mackerel-agent-plugins-v2.spec
+
+.PHONY: rpm-v2-arm
+rpm-v2-arm:
+>>>>>>> upstream/master
 	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
 	rpmbuild --define "_sourcedir `pwd`"  --define "_version ${VERSION}" \
 	  --define "buildarch noarch" --define "dist .el7.centos" \
@@ -107,16 +124,8 @@ deb-v1:
 	cd packaging/deb && debuild --no-tgz-check -rfakeroot -uc -us -aarmhf
 
 .PHONY: deb-v2
-<<<<<<< HEAD
 deb-v2:
 	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=arm64
-=======
-deb-v2: deb-v2-x86 deb-v2-arm
-
-.PHONY: deb-v2-x86
-deb-v2-x86:
-	$(MAKE) build/mackerel-plugin GOOS=linux GOARCH=amd64
->>>>>>> upstream/master
 	cp build/mackerel-plugin packaging/deb-v2/debian/
 	cd packaging/deb-v2 && debuild --no-tgz-check -rfakeroot -uc -us -aarm64
 
