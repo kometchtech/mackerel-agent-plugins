@@ -1,4 +1,4 @@
-image: golang:1.13
+image: golang:1.14
 
 variables:
   REPO_NAME: 'gitlab.com/kometchtech/mackerel-agent-plugins'
@@ -36,7 +36,9 @@ build_job:
   script:
     - cd ${GOPATH}/src/${REPO_NAME}
     - make build rpm deb
-    - mv /root/rpmbuild/RPMS/noarch/*.rpm packaging/
+#    - mv /root/rpmbuild/RPMS/noarch/*.rpm packaging/
+    - mv /root/rpmbuild/RPMS/aarch64/*.rpm packaging/
+    - mv /root/rpmbuild/RPMS/armv7l/*.rpm packaging/
   artifacts:
     paths:
       - packaging/*.deb
