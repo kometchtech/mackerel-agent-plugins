@@ -11,11 +11,9 @@ require (
 	github.com/alouca/gologger v0.0.0-20120904114645-7d4b7291de9c // indirect
 	github.com/alouca/gosnmp v0.0.0-20170620005048-04d83944c9ab
 	github.com/aws/aws-sdk-go v1.34.32
-	github.com/containerd/containerd v1.3.2 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/crowdmob/goamz v0.0.0-20150128194925-3a06871fe9fc
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
-	github.com/fsouza/go-dockerclient v1.6.5
+	github.com/fsouza/go-dockerclient v1.7.0
 	github.com/fukata/golang-stats-api-handler v1.0.0
 	github.com/fzzy/radix v0.5.6
 	github.com/garyburd/redigo v1.6.2
@@ -27,7 +25,6 @@ require (
 	github.com/hashicorp/go-version v1.2.1
 	github.com/jarcoal/httpmock v1.0.6
 	github.com/jmoiron/sqlx v1.2.0
-	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/lestrrat-go/tcptest v0.0.0-20180223004312-f0345789c593
 	github.com/lestrrat-go/tcputil v0.0.0-20180223003554-d3c7f98154fb // indirect
 	github.com/lib/pq v1.8.0
@@ -48,8 +45,7 @@ require (
 	github.com/michaelklishin/rabbit-hole v1.5.0
 	github.com/montanaflynn/stats v0.6.3
 	github.com/naokibtn/go-ses v0.0.0-20150122091825-74908b78cc76
-	github.com/onsi/ginkgo v1.10.2 // indirect
-	github.com/sirupsen/logrus v1.4.2 // indirect
+	github.com/onsi/gomega v1.10.4 // indirect
 	github.com/soh335/go-test-redisserver v0.0.0-20170912004345-f716f0901533
 	github.com/sourcegraph/go-ses v0.0.0-20160405160939-6bd8d17cf7c1 // indirect
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271 // indirect
@@ -60,7 +56,6 @@ require (
 	go.opencensus.io v0.22.2 // indirect
 	golang.org/x/oauth2 v0.0.0-20191202225959-858c2ad4c8b6 // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
-	golang.org/x/sys v0.0.0-20191219235734-af0d71d358ab // indirect
 	google.golang.org/api v0.15.0 // indirect
 	google.golang.org/appengine v1.6.5 // indirect
 	google.golang.org/genproto v0.0.0-20191216205247-b31c10ee225f // indirect
