@@ -34,7 +34,7 @@ require (
 	github.com/mackerelio/go-mackerel-plugin v0.0.0-20200416053722-b68096c191d0
 	github.com/mackerelio/go-mackerel-plugin-helper v0.0.0-20200416053706-9aba6664c25d
 	github.com/mackerelio/go-osstat v0.1.0
-	github.com/mackerelio/golib v1.0.0
+	github.com/mackerelio/golib v1.1.0
 	github.com/mackerelio/mackerel-plugin-aws-ec2 v1.0.1
 	github.com/mackerelio/mackerel-plugin-aws-kinesis-firehose v1.0.1
 	github.com/mackerelio/mackerel-plugin-aws-rekognition v1.0.1
@@ -60,7 +60,6 @@ require (
 	go.opencensus.io v0.22.2 // indirect
 	golang.org/x/oauth2 v0.0.0-20191202225959-858c2ad4c8b6 // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
-	golang.org/x/sys v0.0.0-20191219235734-af0d71d358ab // indirect
 	google.golang.org/api v0.15.0 // indirect
 	google.golang.org/appengine v1.6.5 // indirect
 	google.golang.org/genproto v0.0.0-20191216205247-b31c10ee225f // indirect
