@@ -1,4 +1,4 @@
-VERSION = 0.63.1
+VERSION = 0.63.5
 VERBOSE_FLAG = $(if $(VERBOSE),-verbose)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
 
@@ -48,7 +48,6 @@ testconvention:
 testdeps:
 	cd && go get golang.org/x/lint/golint \
 	  golang.org/x/tools/cmd/cover \
-	  github.com/pierrre/gotestcover \
 	  github.com/mattn/goveralls
 
 .PHONY: check-release-deps
@@ -64,12 +63,12 @@ check-release-deps:
 
 .PHONY: lint
 lint: testdeps
-	go vet ./...
 	golint -set_exit_status ./...
 
 .PHONY: cover
 cover: testdeps
-	gotestcover -v -covermode=count -coverprofile=.profile.cov -parallelpackages=4 ./...
+	#go test -race -covermode=atomic -coverprofile=.profile.cov ./...
+	go test -covermode=atomic -coverprofile=.profile.cov ./...
 
 .PHONY: rpm
 rpm: rpm-v1 rpm-v2
