@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.63.5 (2021-02-19)
+
+* fix incorrect endpoint inspect condition #730 (yseto)
+
+
+## 0.63.4 (2021-02-19)
+
+* migrate from goamz,go-ses to aws-sdk-go #726 (yseto)
+* replace mackerel-github-release #724 (yseto)
+* [plugin-redis] add test.sh #718 (lufia)
+
+
+## 0.63.3 (2021-01-21)
+
+* Revert "delete unused Makefile tasks" #716 (lufia)
+* Bump github.com/aws/aws-sdk-go from 1.35.33 to 1.36.28 #712 (dependabot[bot])
+* Bump github.com/fsouza/go-dockerclient from 1.6.6 to 1.7.0 #711 (dependabot[bot])
+* Bump github.com/mackerelio/mackerel-plugin-json from 1.2.0 to 1.2.2 #706 (dependabot[bot])
+* Bump github.com/montanaflynn/stats from 0.6.3 to 0.6.4 #713 (dependabot[bot])
+* Bump github.com/jarcoal/httpmock from 1.0.6 to 1.0.7 #709 (dependabot[bot])
+* Bump github.com/stretchr/testify from 1.6.1 to 1.7.0 #714 (dependabot[bot])
+* Bump github.com/mackerelio/golib from 1.0.0 to 1.1.0 #715 (dependabot[bot])
+* Fix labels of innodb_tables_in_use and innodb_locked_tables #708 (syou6162)
+* Bump github.com/fsouza/go-dockerclient from 1.6.5 to 1.6.6 #696 (dependabot[bot])
+* migrate garyburd/redigo -> gomodule/redigo #704 (lufia)
+* migrate CI to GitHub Actions #701 (lufia)
+* [plugin-apache2] add test.sh #700 (lufia)
+
+
+## 0.63.2 (2020-12-09)
+
+* Bump github.com/lib/pq from 1.8.0 to 1.9.0 #697 (dependabot[bot])
+* Bump github.com/mackerelio/mackerel-plugin-json from 1.1.0 to 1.2.0 #692 (dependabot[bot])
+* Enables to parse responses which include string and number from Plack. #694 (fujiwara)
+* Bump github.com/aws/aws-sdk-go from 1.34.32 to 1.35.33 #691 (dependabot[bot])
+* Bump github.com/urfave/cli from 1.22.4 to 1.22.5 #686 (dependabot-preview[bot])
+* Bump github.com/go-ldap/ldap/v3 from 3.2.3 to 3.2.4 #682 (dependabot-preview[bot])
+* Update Dependabot config file #689 (dependabot-preview[bot])
+
+
 ## 0.63.1 (2020-10-01)
 
 * Bump github.com/aws/aws-sdk-go from 1.34.22 to 1.34.32 #677 (dependabot-preview[bot])
