@@ -10,7 +10,7 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d
 	github.com/alouca/gologger v0.0.0-20120904114645-7d4b7291de9c // indirect
 	github.com/alouca/gosnmp v0.0.0-20170620005048-04d83944c9ab
-	github.com/aws/aws-sdk-go v1.36.28
+	github.com/aws/aws-sdk-go v1.39.4
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5
 	github.com/fsouza/go-dockerclient v1.7.0
 	github.com/fukata/golang-stats-api-handler v1.0.0
@@ -51,6 +51,7 @@ require (
 	github.com/urfave/cli v1.22.5
 	github.com/ziutek/mymysql v1.5.4
 	go.opencensus.io v0.22.2 // indirect
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9 // indirect
 	golang.org/x/oauth2 v0.0.0-20191202225959-858c2ad4c8b6 // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
 	google.golang.org/api v0.15.0 // indirect
